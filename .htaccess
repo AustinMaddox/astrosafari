@@ -1,0 +1,36 @@
+#
+# Uncomment the statement below if you want to make use of
+# HTTP authentication and it does not already work.
+# This could be required if you are for example using PHP via Apache CGI.
+#
+#<IfModule mod_rewrite.c>
+#RewriteEngine on
+#RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization},L]
+#</IfModule>
+
+<Files "config.php">
+Order Allow,Deny
+Deny from All
+</Files>
+
+<Files "common.php">
+Order Allow,Deny
+Deny from All
+</Files>
+
+#DirectoryIndex downtime.php
+
+RewriteEngine on
+
+# REWRITE BASE
+RewriteBase /
+
+# HERE IS A GOOD PLACE TO FORCE CANONICAL DOMAIN
+RewriteCond %{HTTP_HOST} !^(www|archive|archives|old)\.astrosafari\.com$ [NC]
+RewriteRule ^(.*)$ http://www.astrosafari.com/$1 [QSA,L,R=301]
+
+# FORCE "/" instead of "/index.php"
+RewriteRule ^index\.php$ - [L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule . /index.php [L]

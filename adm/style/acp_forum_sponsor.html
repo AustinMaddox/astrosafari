@@ -1,0 +1,59 @@
+<script type="text/javascript">
+// <![CDATA[
+
+function enable_sponsor_html()
+{
+	if (document.forms[0].sponsor_parse_bbcode.disabled)
+	{
+		document.forms[0].sponsor_parse_bbcode.disabled = false;
+		document.forms[0].sponsor_parse_smilies.disabled = false;
+		document.forms[0].sponsor_parse_urls.disabled = false;
+	}
+	else
+	{
+		document.forms[0].sponsor_parse_bbcode.disabled = true;
+		document.forms[0].sponsor_parse_smilies.disabled = true;
+		document.forms[0].sponsor_parse_urls.disabled = true;
+	}
+}
+
+function enable_sponsor_forumlist_html()
+{
+	if (document.forms[0].sponsor_parse_forumlist_bbcode.disabled)
+	{
+		document.forms[0].sponsor_parse_forumlist_bbcode.disabled = false;
+		document.forms[0].sponsor_parse_forumlist_smilies.disabled = false;
+		document.forms[0].sponsor_parse_forumlist_urls.disabled = false;
+	}
+	else
+	{
+		document.forms[0].sponsor_parse_forumlist_bbcode.disabled = true;
+		document.forms[0].sponsor_parse_forumlist_smilies.disabled = true;
+		document.forms[0].sponsor_parse_forumlist_urls.disabled = true;
+	}
+}
+
+// ]]>
+</script>
+
+<div id="forum_sponsor_options">
+	<fieldset>
+		<legend>{L_FORUM_SPONSOR}</legend>
+	<dl>
+		<dt><label for="forum_sponsor">{L_FORUM_SPONSOR_INSIDE}:</label><br /><span>{L_FORUM_SPONSOR_INSIDE_EXPLAIN}</span></dt>
+		<dd><textarea id="forum_sponsor" name="forum_sponsor" rows="8" cols="70">{FORUM_SPONSOR}</textarea></dd>
+		<dd><label><input type="checkbox" class="radio" name="sponsor_parse_html"<!-- IF S_SPONSOR_HTML_CHECKED --> checked="checked"<!-- ENDIF --> onclick="enable_sponsor_html();" /> {L_PARSE_HTML}</label>
+			<label><input type="checkbox" class="radio" name="sponsor_parse_bbcode"<!-- IF S_SPONSOR_BBCODE_CHECKED --> checked="checked"<!-- ENDIF --><!-- IF S_SPONSOR_HTML_CHECKED --> disabled="disabled"<!-- ENDIF --> /> {L_PARSE_BBCODE}</label>
+			<label><input type="checkbox" class="radio" name="sponsor_parse_smilies"<!-- IF S_SPONSOR_SMILIES_CHECKED --> checked="checked"<!-- ENDIF --><!-- IF S_SPONSOR_HTML_CHECKED --> disabled="disabled"<!-- ENDIF --> /> {L_PARSE_SMILIES}</label>
+			<label><input type="checkbox" class="radio" name="sponsor_parse_urls"<!-- IF S_SPONSOR_URLS_CHECKED --> checked="checked"<!-- ENDIF --><!-- IF S_SPONSOR_HTML_CHECKED --> disabled="disabled"<!-- ENDIF --> /> {L_PARSE_URLS}</label></dd>
+	</dl>
+	<dl>
+		<dt><label for="forum_sponsor_forumlist">{L_FORUM_SPONSOR_FORUMLIST}:</label><br /><span>{L_FORUM_SPONSOR_FORUMLIST_EXPLAIN}</span></dt>
+		<dd><textarea id="forum_sponsor_forumlist" name="forum_sponsor_forumlist" rows="8" cols="70">{FORUM_SPONSOR_FORUMLIST}</textarea></dd>
+		<dd><label><input type="checkbox" class="radio" name="sponsor_parse_forumlist_html"<!-- IF S_SPONSOR_FORUMLIST_HTML_CHECKED --> checked="checked"<!-- ENDIF --> onclick="enable_sponsor_forumlist_html();" /> {L_PARSE_HTML}</label>
+			<label><input type="checkbox" class="radio" name="sponsor_parse_forumlist_bbcode"<!-- IF S_SPONSOR_FORUMLIST_BBCODE_CHECKED --> checked="checked"<!-- ENDIF --><!-- IF S_SPONSOR_FORUMLIST_HTML_CHECKED --> disabled="disabled"<!-- ENDIF --> /> {L_PARSE_BBCODE}</label>
+			<label><input type="checkbox" class="radio" name="sponsor_parse_forumlist_smilies"<!-- IF S_SPONSOR_FORUMLIST_SMILIES_CHECKED --> checked="checked"<!-- ENDIF --><!-- IF S_SPONSOR_FORUMLIST_HTML_CHECKED --> disabled="disabled"<!-- ENDIF --> /> {L_PARSE_SMILIES}</label>
+			<label><input type="checkbox" class="radio" name="sponsor_parse_forumlist_urls"<!-- IF S_SPONSOR_FORUMLIST_URLS_CHECKED --> checked="checked"<!-- ENDIF --><!-- IF S_SPONSOR_FORUMLIST_HTML_CHECKED --> disabled="disabled"<!-- ENDIF --> /> {L_PARSE_URLS}</label></dd>
+	</dl>
+	</fieldset>
+</div>

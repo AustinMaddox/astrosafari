@@ -1,0 +1,4 @@
+User-agent: *
+Disallow: /posting.php
+Disallow: /ucp.php
+Disallow: /mcp.php

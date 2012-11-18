@@ -1,0 +1,85 @@
+<!-- INCLUDE overall_header.html -->
+
+<h2>{L_GROUPS_TITLE}</h2>
+
+<div>
+	<p>{L_GROUPS_DESC}</p>
+</div>
+
+<div class="panel bg1">
+	<div class="inner"><span class="corners-top"><span></span></span>
+
+	<div class="content">
+		<h2>{L_GROUPS_FAQ_TITLE}</h2>
+			<dl class="faq">
+				<dd>{L_GROUPS_FAQ}</dd>
+				<dd><a href="#top" class="top2">{L_BACK_TO_TOP}</a></dd>
+			</dl>
+	</div>
+
+	<span class="corners-bottom"><span></span></span></div>
+</div>
+
+<div class="forabg forumbg-table">
+	<div class="inner"><span class="corners-top"><span></span></span>
+		<table class="table1" cellspacing="1" id="groups_page">
+		<thead>
+		<tr>
+			<th>{L_GROUP_NAME}</th>
+			<th>{L_GROUP_RANK}</th>
+			<th>{L_GROUP_AVATAR}</th>
+			<th>{L_GROUP_DESC}</th>
+			<th>{L_GROUP_MEMBERS}</th>
+		</tr>
+		</thead>
+		<tbody>
+		<!-- BEGIN group_row -->
+		<tr class="<!-- IF group_row.S_ROW_COUNT is even -->bg1<!-- ELSE -->bg2<!-- ENDIF -->">
+			<td><!-- IF group_row.S_BOT_GROUP or group_row.S_GUEST_GROUP --><!-- IF group_row.GROUP_COLOR --><span style="color:#{group_row.GROUP_COLOR};"><!-- ENDIF -->{group_row.GROUP_NAME}<!-- IF group_row.GROUP_COLOR --></span><!-- ENDIF --><!-- ELSE --><a href="{group_row.U_GROUP}"><!-- IF group_row.GROUP_COLOR --><span style="color:#{group_row.GROUP_COLOR};"><!-- ENDIF -->{group_row.GROUP_NAME}<!-- IF group_row.GROUP_COLOR --></span><!-- ENDIF --></a><!-- ENDIF --><br /><em>{group_row.GROUP_TYPE}</em></td>
+			<td><!-- IF group_row.RANK_IMG --><span class="rank-img">{group_row.RANK_IMG}</span><!-- ELSE --><span class="rank-img">{group_row.RANK_TITLE}</span><!-- ENDIF --></td>
+			<td><!-- IF group_row.AVATAR_IMG -->{group_row.AVATAR_IMG}<!-- ELSE -->&nbsp;<!-- ENDIF --></td>
+			<td><!-- IF group_row.GROUP_DESC -->{group_row.GROUP_DESC}<!-- ELSE -->&nbsp;<!-- ENDIF --></td>
+			<td style="text-align:center;">{group_row.GROUP_COUNT}</td>
+		</tr>
+		<!-- END group_row -->
+		</tbody>
+		</table>
+		<span class="corners-bottom"><span></span></span>
+	</div>
+</div>
+
+<!-- BEGIN groups -->
+<div style="border: solid #{groups.GROUP_COLOUR}; padding: 1px 1px 0 3px;" class="round">
+	<div class="left" style="padding: 3px 0 0 3px;">
+		<h2 style="margin-top: 0;"><a href="{groups.U_VIEW_GROUP}" style="color: #{groups.GROUP_COLOUR}; text-decoration: none;" title="{groups.GROUP_NAME}">{groups.GROUP_NAME}</a></h2>
+		<p style="float: left; width: 49%;">
+            <!-- IF groups.S_SHOW_RANK_IMG -->{groups.RANK_IMG}<!-- ENDIF -->
+            <!-- IF groups.S_SHOW_GROUP_RANK -->{groups.GROUP_RANK}<br /><!-- ENDIF -->
+            <!-- IF groups.S_SHOW_GROUP_DESC --><br />{groups.GROUP_DESC}<br /><!-- ENDIF -->
+		</p>
+	</div>
+
+	<div style="float:right; width: 49%;">
+		<!-- BEGIN leaders -->
+			<a style="display: block; border-bottom: 1px dotted #{groups.GROUP_COLOUR}; padding: 3px;" href="{groups.leaders.U_VIEW_PROFILE}" title="Leader: View Profile"><strong>&raquo;</strong> <strong style="color: #{groups.GROUP_COLOUR};">{groups.leaders.USERNAME}</strong></a>
+        <!-- BEGINELSE -->
+            <span style="display: block;"><strong>&raquo;</strong> {L_NO_LEADERS}</span>   
+        <!-- END leaders -->
+		<!-- BEGIN members -->
+			<a style="display: block; border-bottom: 1px dotted #{groups.GROUP_COLOUR}; padding: 3px;" href="{groups.members.U_VIEW_PROFILE}" title="View Profile"><span style="color: #{groups.GROUP_COLOUR};">{groups.members.USERNAME}</span></a>
+        <!-- BEGINELSE -->
+            <span style="display: block;">{L_NO_MEMBERS}</span>   
+        <!-- END members -->
+	</div>
+
+	<div style="clear: both;">&nbsp;</div>
+</div>
+<br /> 
+<!-- END groups -->
+
+<!-- INCLUDE jumpbox.html -->
+
+<h3>{L_GROUPS} {L_SYNOPSIS}</h3>
+<div><p>{L_GROUPS_DESC_BOTTOM}</p></div>
+
+<!-- INCLUDE overall_footer.html -->

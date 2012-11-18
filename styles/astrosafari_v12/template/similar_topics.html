@@ -1,0 +1,56 @@
+<div class="panel bg2">
+	<div class="inner"><span class="corners-top"><span></span></span>
+        <ul class="topiclist">
+            <li class="header">
+                <dl class="icon" style="border-bottom:1px solid #105289;">
+                    <dt><span style="color:#b00; font-weight:bold; font-size:11px;">{L_SIMILAR_TOPICS}</span></dt>
+                    <dd class="topics"><span style="color:#333;">{L_REPLIES}</span></dd>
+                    <dd class="posts"><span style="color:#333;">{L_VIEWS}</span></dd>
+                    <dd class="lastpost"><span style="color:#333;">{L_AUTHOR}</span></dd>
+                </dl>
+            </li>
+        </ul>
+        <ul class="topiclist topics">
+        <!-- BEGIN similar -->
+            <li class="row<!-- IF similar.S_ROW_COUNT is even --> bg1<!-- ELSE --> bg2<!-- ENDIF -->">
+				<dl class="icon" style="background-image: url({T_IMAGESET_PATH}/forum_read.gif); background-repeat: no-repeat;">
+                    <dt><a style="font-weight:bold; text-decoration:underline; font-size:12px;" href="{similar.U_TOPIC}"<!-- IF similar.TOPIC_PREVIEW_TEXT --> title="{similar.TOPIC_PREVIEW_TEXT}"<!-- ENDIF -->>{similar.TOPIC_TITLE}</a><br />
+                    {L_POST_BY_AUTHOR} {similar.TOPIC_AUTHOR_FULL} &raquo; {similar.FIRST_POST_TIME} {L_IN} <a href="{similar.U_FORUM}" style="font-weight: bold;">{similar.FORUM}</a>
+                    </dt>
+                    <dd class="posts">{similar.TOPIC_REPLIES} <dfn>{L_REPLIES}</dfn></dd>
+                    <dd class="views">{similar.TOPIC_VIEWS} <dfn>{L_VIEWS}</dfn></dd>
+                    <dd class="lastpost"><span><dfn>{L_LAST_POST} </dfn>{L_POST_BY_AUTHOR} {similar.LAST_POST_AUTHOR_FULL}
+                        <a href="{similar.U_LAST_POST}">{LAST_POST_IMG}</a> <br />{similar.LAST_POST_TIME}</span>
+                </dl>
+            </li>
+            <!-- IF similar.S_LAST_ROW -->
+            <li class="row bg1">
+				<dl class="icon" style="background-image: url({T_IMAGESET_PATH}/forum_read.gif); background-repeat: no-repeat;">
+                    <dt>
+                        <span style="margin-left:-5px;">
+                            <script type="text/javascript"><!--
+                            google_ad_client = "ca-pub-4089785947373898";
+                            /* astrosafari.com, Viewtopic-SimilarTopics-FirstPost */
+                            google_ad_slot = "9491437647";
+                            google_ad_width = 234;
+                            google_ad_height = 60;
+                            //-->
+                            </script>
+                            <script type="text/javascript"
+                            src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+                            </script>
+                            &nbsp;
+                        </span>
+                    </dt>
+                    <dd class="posts">{similar.TOPIC_REPLIES_ADVERTISEMENT}</dd>
+                    <dd class="views">{similar.TOPIC_VIEWS_ADVERTISEMENT}</dd>
+                    <dd class="lastpost"><span><dfn>{L_LAST_POST} </dfn>{L_POST_BY_AUTHOR} {similar.LAST_POST_AUTHOR_FULL_ADVERTISEMENT}
+                        {LAST_POST_IMG}<br />{similar.LAST_POST_TIME_ADVERTISEMENT}
+                </dl>
+            </li>
+            <!-- ENDIF -->
+        <!-- END similar -->
+        </ul>
+		<div class="back2top" style="margin-top:4px;"><a href="#wrap" class="top" title="{L_BACK_TO_TOP}">{L_BACK_TO_TOP}</a></div>
+    <span class="corners-bottom"><span></span></span></div>
+</div>

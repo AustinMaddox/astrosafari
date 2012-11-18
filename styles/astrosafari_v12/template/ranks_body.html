@@ -1,0 +1,52 @@
+<!-- INCLUDE overall_header.html -->
+
+<h2>{L_RANKS_TITLE}</h2>
+
+<div>
+	<p>{L_RANKS_DESC}</p>
+</div>
+
+<div class="forumbg forumbg-table">
+	<div class="inner"><span class="corners-top"><span></span></span>
+
+        <table class="table1" cellspacing="1">
+        <thead>
+            <tr>
+              <th class="table1" style="text-align:center;">{L_RANK_IMAGE}</th>
+              <th class="table1" style="text-align:center;">{L_RANK_TITLE}</th>
+              <th class="table1" style="text-align:center;">{L_RANK_MIN}</th>   
+            </tr>
+        </thead>
+        <tbody>
+        
+     <!-- IF .rank -->
+            <!-- BEGIN rank -->
+            <tr class="<!-- IF rank.S_ROW_COUNT is even -->bg1<!-- ELSE -->bg2<!-- ENDIF -->">
+                <td style="text-align:center;"><!-- IF rank.RANK_IMAGE --><img src="{rank.RANK_IMAGE}" title="{rank.RANK_TITLE}" alt="{rank.RANK_TITLE}" /><!-- ELSE -->{L_NO_RANK_IMAGE}<!-- ENDIF --></td>
+                <td style="text-align:center;">{rank.RANK_TITLE}</td>
+                <td style="text-align:center;">{rank.RANK_MIN}</td>
+            </tr>
+            <!-- END rank -->
+           </tbody>
+        </table>
+
+    	<span class="corners-bottom"><span></span></span></div>
+    </div>
+    <!-- ELSE -->
+           </tbody>
+        </table>
+        
+        <span class="corners-bottom"><span></span></span></div>
+    </div>
+
+    <div class="errorbox">
+        <p><strong>{L_NO_RANKS}</strong></p>
+    </div>
+	<!-- ENDIF -->
+    
+<!-- INCLUDE jumpbox.html -->
+
+	<h3>{L_RANKS} {L_SYNOPSIS}</h3>
+    <div><p>{L_RANKS_DESC_BOTTOM}</p></div>
+
+<!-- INCLUDE overall_footer.html -->
