@@ -228,7 +228,7 @@ function addquote(post_id, username, l_wrote)
 
 	// Get text selection - not only the post content :(
 	// IE9 must use the document.selection method but has the *.getSelection so we just force no IE
-	if (window.getSelection && !is_ie)
+	if (window.getSelection && !is_ie && !window.opera)
 	{
 		theSelection = window.getSelection().toString();
 	}
@@ -452,8 +452,6 @@ function getCaretPosition(txtarea)
 		
 		// calculate selection start point by moving beginning of range_all to beginning of range
 		var sel_start;
-		try
-		{
 			for (sel_start = 0; range_all.compareEndPoints('StartToStart', range) < 0; sel_start++)
 			{		
 				range_all.moveStart('character', 1);
@@ -465,10 +463,6 @@ function getCaretPosition(txtarea)
 			caretPos.start = txtarea.sel_start;
 			caretPos.end = txtarea.sel_start;
 		}
-		catch(e)
-		{
-		}
-	}
 
 	return caretPos;
 }

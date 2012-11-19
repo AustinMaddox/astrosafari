@@ -1304,6 +1304,7 @@ switch ($mode)
 			// Misusing the avatar function for displaying group avatars...
 			$avatar_img = get_user_avatar($group_row['group_avatar'], $group_row['group_avatar_type'], $group_row['group_avatar_width'], $group_row['group_avatar_height'], 'GROUP_AVATAR');
 
+			// ... same for group rank
 			$rank_title = $rank_img = $rank_img_src = '';
 			if ($group_row['group_rank'])
 			{
@@ -1429,6 +1430,7 @@ switch ($mode)
 		if ($mode)
 		{
 			$params[] = "mode=$mode";
+			$u_first_char_params[] = "mode=$mode";
 		}
 		$sort_params[] = "mode=$mode";
 
