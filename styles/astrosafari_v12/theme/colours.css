@@ -746,6 +746,7 @@ a.delicious {
 .icon-contact					{ background-image: url("{T_THEME_PATH}/images/icon_contact.png"); }
 .icon-shop-talk					{ background-image: url("{T_THEME_PATH}/images/icon_shop_talk.png"); }
 .icon-login						{ background-image: url("{T_THEME_PATH}/images/icon_login.png"); }
+.icon-donate					{ background-image: url("{T_THEME_PATH}/images/icon_donate.png"); }
 
 /* Profile & navigation icons */
 .email-icon, .email-icon a		{ background-image: url("{IMG_ICON_CONTACT_EMAIL_SRC}"); }
